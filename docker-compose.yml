@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    image: openfoam-base
+    container_name: openfoam-base
+    tty: true
+    restart: always
+    privileged: true
+    runtime: nvidia
+    environment:
+      - DISPLAY=${DISPLAY}
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR
