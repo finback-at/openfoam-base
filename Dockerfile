@@ -9,6 +9,6 @@ RUN apt-get update && \
 RUN pip install --upgrade pip && \
     pip install numpy scipy matplotlib pandas nodejs simpy pyxel openpyxl \
     jupyter jupyterlab bash_kernel gnuplot_kernel PyFoam \
-    cython docutils zeroconf ipdb xlwt xlrd && \
+    cython docutils zeroconf ipdb xlwt xlrd xlsxwriter line_profiler ply && \
     python -m bash_kernel.install && \
     python -m gnuplot_kernel install
